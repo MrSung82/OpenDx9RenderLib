@@ -39,6 +39,8 @@ using OdxSize = uint32_t;
 
 using OdxFlags = uint32_t;
 
+using OdxEnumTypeS = int32_t;
+using OdxEnumTypeU = uint32_t;
 
 template <typename T>
 struct OdxSize2D
@@ -60,6 +62,15 @@ struct OdxSize3D
 
 using OdxSize3Du = OdxSize3D<OdxSize>;
 
+
+template <typename T>
+struct OdxVector2D
+{
+	T x{};
+	T y{};
+};
+
+using OdxVector2Df = OdxVector2D<float>;
 
 template <typename T, typename ... Args>
 constexpr T* OdxConstructAt(void* p, Args&& ... args)
